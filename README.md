@@ -20,7 +20,7 @@ Appen är byggd med **React, TypeScript och React Router**, sparar valda städer
 
 ```bash
 # 1) Klona repo
-git clone <https://github.com/25Ismail/world-clock>
+git clone https://github.com/25Ismail/world-clock
 cd world-clock
 
 # 2) Installera paket
