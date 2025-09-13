@@ -32,6 +32,7 @@ npm run dev
 # 4) (valfritt) Bygg för produktion
 npm run build
 npm run preview
+```
 
 --
 
@@ -45,6 +46,7 @@ npm run preview
 - **CSS** (responsiv styling i neon/cyberpunk-tema)
 
 ---
+```
 
 src/
   components/
@@ -65,6 +67,7 @@ src/
   App.tsx
   main.tsx
   index.css
+```
 
 
 ## ✅ Kravuppfyllelse
