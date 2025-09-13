@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { CityListPage } from "./pages/CityListPage";
+import { CityDetailPage } from "./pages/CityDetailPage";
 
+/**
+ * Main application component.
+ * 
+ * Sets up routing for the app using React Router:
+ * - "/" → CityListPage (shows the list of cities and clocks)
+ * - "/city/:id" → CityDetailPage (shows details for a selected city)
+ */
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Router>
+      <Routes>
+        {/* Route for the home page with a list of cities */}
+        <Route path="/" element={<CityListPage />} />
+
+        {/* Route for the city detail page, using dynamic id from the URL */}
+        <Route path="/city/:id" element={<CityDetailPage />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
+
+

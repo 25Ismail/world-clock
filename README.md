@@ -1,69 +1,93 @@
-# React + TypeScript + Vite
+# 🌍 World Clock – React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Jag har byggt en responsiv World Clock-app där man kan hålla reda på lokal tid i olika städer runt om i världen.  
+Appen är byggd med **React, TypeScript och React Router**, sparar valda städer i **localStorage**, och kan visa både **digital** och **analog** klocka.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Funktioner
 
-## Expanding the ESLint configuration
+- Lägg till egna städer/tidszoner via formulär
+- Förifylld lista av ca 20 storstäder (IANA-tidszoner)
+- Detaljsida per stad (egen route via React Router)
+- Digital **och** analog klocka
+- Inställningar sparas i `localStorage`
+- Responsiv design (mobil → desktop)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Installation & körning
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+```bash
+# 1) Klona repo
+git clone <repo-url>
+cd world-clock
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+# 2) Installera paket
+npm install
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+# 3) Starta dev-server (Vite)
+npm run dev
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+# 4) (valfritt) Bygg för produktion
+npm run build
+npm run preview
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+--
+
+## 🧰 Tekniker
+
+- **React 18** (funktionella komponenter + hooks)
+- **TypeScript** (interfaces, generics, utility types, type guards)
+- **React Router** (routing för detaljerade sidor)
+- **Vite** (dev-server och build)
+- **localStorage** (sparade städer)
+- **CSS** (responsiv styling i neon/cyberpunk-tema)
+
+---
+
+src/
+  components/
+    AddCityForm.tsx
+    AnalogClock.tsx
+    Clock.tsx
+    List.tsx
+  data/
+    cities.tsx
+  pages/
+    CityDetailPage.tsx
+    CityListPage.tsx
+  types/
+    City.ts
+  utils/
+    guards.ts
+    storage.ts
+  App.tsx
+  main.tsx
+  index.css
+
+
+## ✅ Kravuppfyllelse
+
+### G-krav
+- React + TypeScript med hooks ✅
+- Interfaces och korrekt typning ✅
+- Lägga till egna städer + välja från lista ✅
+- Detaljvy per stad (React Router) ✅
+- Digital och analog klocka ✅
+- Sparas i localStorage ✅
+- Responsiv design ✅
+- Loggbok och Git ✅
+
+### VG-krav
+- Välorganiserad komponentstruktur ✅
+- Typade props mellan komponenter ✅
+- Minst 20 städer ✅
+- Avancerad TypeScript (generics, utility types, type guards) ✅
+- Möjlighet till vidare utveckling:
+  - Flytta städer till `cities.json`
+  - Använd `enum` för tidszoner
+  - Lägg till `imageUrl` för bakgrundsbilder på detaljsidor
+
+---
 ```
