@@ -58,4 +58,4 @@ Jag testade min kod med **Vitest**:
 ## Slutsats
 
 Jag har byggt en app i React + TypeScript som visar både digital och analog tid, sparar städer i localStorage, fungerar på både mobil och dator och har tester.  
-mitt måll var att uppfyllt både G- och VG-kraven, vilket jag tror att jag har nåt
+Mitt mål var att uppfylla både G- och VG-kraven, och jag tror att jag har lyckats med det
