@@ -44,7 +44,7 @@ export function AddCityForm({ onAddCity }: AddCityFormProps) {
     // Call the parent function and send the new city data upwards.
     // "country" is set to an empty string here, but could be expanded later.
     onAddCity({ name, timezone, country: "" });
-    console.log("New city submitted:", { name, timezone });
+    console.log("New city submitted:", { name, timezone }); 
 
     // Clear the form fields after submission.
     setName("");

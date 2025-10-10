@@ -14,6 +14,7 @@ export function saveCities(cities: City[]) {
   }
 }
 
+
 /**
  * Ladda städer från localStorage
  * - Filtrerar bort ogiltiga objekt med isCity

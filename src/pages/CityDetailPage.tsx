@@ -1,15 +1,20 @@
 import { useParams, Link } from "react-router-dom";
 import { cities } from "../data/cities";
+import { loadCities } from "../utils/storage";
 import { Clock } from "../components/Clock";
 import { AnalogClock } from "../components/AnalogClock";
 
 // Component for displaying detailed information about a single city
 export function CityDetailPage() {
   // Extract the "id" parameter from the URL using React Router
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<{ id: string }>(); 
+
+  const stored = loadCities();
+  const cityList = stored.length > 0 ? stored : cities
+ 
 
   // Find the matching city in the list based on the id from the URL
-  const city = cities.find((c) => c.id === Number(id));
+  const city = cityList.find((c) => c.id === Number(id));
 
   // If no city is found, show an error message
   if (!city) {

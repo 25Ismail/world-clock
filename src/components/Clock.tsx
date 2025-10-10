@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 // - type: optional, can be "digital" or "analog" (default is "digital")
 interface ClockProps {
   timezone: string;
-  type?: "digital" | "analog"; // choose display type
+  type?: "digital"  | "analog"; // choose display type
 }
 
 // Functional component that displays a clock in either digital or analog format
