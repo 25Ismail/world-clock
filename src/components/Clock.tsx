@@ -25,7 +25,7 @@ export function Clock({ timezone, type = "digital" }: ClockProps) {
         });
         setTime(now); // Save formatted time into state
       } catch (err) {
-        // If the timezone is invalid, log an error and set fallback text
+          // If the timezone is invalid, log an error and set fallback text
         console.error("❌ Invalid timezone:", timezone, err);
         setTime("Invalid timezone");
       }
@@ -46,36 +46,4 @@ export function Clock({ timezone, type = "digital" }: ClockProps) {
     return <p className="clock">{time}</p>;
   }
 
-  // Analog clock rendering
-  // Get current date and adjust to the given timezone
-  const date = new Date();
-  try {
-    const localDate = new Date(
-      date.toLocaleString("en-US", { timeZone: timezone })
-    );
-
-    // Extract time parts
-    const seconds = localDate.getSeconds();
-    const minutes = localDate.getMinutes();
-    const hours = localDate.getHours();
-
-    // Calculate degrees for clock hands
-    const secondDeg = (seconds / 60) * 360;
-    const minuteDeg = (minutes / 60) * 360;
-    const hourDeg = (hours / 12) * 360 + (minutes / 60) * 30;
-
-    // Render a simple analog clock with hour, minute, and second hands
-    return (
-      <div className="analog-clock">
-        <div className="hand hour" style={{ transform: `rotate(${hourDeg}deg)` }} />
-        <div className="hand minute" style={{ transform: `rotate(${minuteDeg}deg)` }} />
-        <div className="hand second" style={{ transform: `rotate(${secondDeg}deg)` }} />
-      </div>
-    );
-  } catch (err) {
-    // Fallback for invalid timezones in analog mode
-    console.error("❌ Invalid timezone in analog mode:", timezone, err);
-    return <p>Invalid timezone</p>;
-  }
 }
-

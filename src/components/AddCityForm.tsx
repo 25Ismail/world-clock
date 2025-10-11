@@ -11,7 +11,7 @@ type CityInput = Omit<City, "id" | "imageUrl">;
 // - nextId: prepared for generating an id for the next city (not used here yet).
 interface AddCityFormProps {
   onAddCity: (city: CityInput) => void;
-  nextId: number;
+ 
 }
 
 // A predefined list of timezones that the user can choose from.

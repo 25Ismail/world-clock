@@ -39,7 +39,6 @@ export function CityListPage() {
     // Update the state and save the new list
     const updated = [...cityList, withId];
     setCityList(updated);
-    saveCities(updated);
   };
 
   // Save the city list to localStorage every time it changes
@@ -64,7 +63,7 @@ export function CityListPage() {
       {/* Form for adding a new city */}
       <AddCityForm 
         onAddCity={handleAddCity} 
-        nextId={nextId(cityList)} 
+  
       />
 
       {/* List of cities with links and live clocks */}

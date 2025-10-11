@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { cities } from "../data/cities";
+import { cities as initialCities } from "../data/cities";
 import { loadCities } from "../utils/storage";
 import { Clock } from "../components/Clock";
 import { AnalogClock } from "../components/AnalogClock";
@@ -10,7 +10,7 @@ export function CityDetailPage() {
   const { id } = useParams<{ id: string }>(); 
 
   const stored = loadCities();
-  const cityList = stored.length > 0 ? stored : cities
+  const cityList = stored.length > 0 ? stored : initialCities
  
 
   // Find the matching city in the list based on the id from the URL
